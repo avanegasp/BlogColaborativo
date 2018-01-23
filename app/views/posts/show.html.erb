@@ -1,2 +1,10 @@
-<h1>Posts#show,</h1>
-<p>Find me in app/views/posts/show,.html.erb</p>
+
+
+<h1><%=@post.title%></h1>
+<p> <%=@post.body %></p>
+
+<% @post.comments.each do |comment| %>
+  <p> <%= comment.user.email%>, <%=comment.created_at %></p>
+  <p> <%= comment.body %></p>
+<% end %>
+<%= link_to "Volver", posts_path%>
