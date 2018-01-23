@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  def index
+  before_action :authenticate_user! 
 
+  def index
+    @post = Post.all
   end
 
   def show
