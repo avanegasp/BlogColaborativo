@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <%=form_for [@post, @post.comments.new] do |f|%>
+    <div class="form-group">
+      <%=f.text_area :body, class: "form-control input-lg", placeholder:"Ingresa un comentario"%>
+    </div>
+    <%=f.submit "Agrega tu comentario", class: "btn btn-primary btn-lg btn-block"%>
+    <%end%>
+  </div>
+</div>
