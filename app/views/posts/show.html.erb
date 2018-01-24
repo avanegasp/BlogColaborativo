@@ -1,6 +1,8 @@
 
 
+
 <h1><%=@post.title%></h1>
+<p><%=@post.user.email%>, <%=@post.created_at%></p>
 <p> <%=@post.body %></p>
 
 <% @post.comments.each do |comment| %>
