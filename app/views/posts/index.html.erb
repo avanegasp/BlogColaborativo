@@ -10,7 +10,8 @@
         <p> <%= post.created_at %></p>
         <p> <%= post.user.email%></p>
         <p> <%=post.body %></p>
-        <%= link_to "ir al show", post_path(post.id) %>
+        <p>  <%= link_to "<span class='glyphicon glyphicon-search'>ir al show</span>".html_safe, post_path(post.id) %></p>
+        <p>  <%= link_to "<span class='glyphicon glyphicon-pencil'> Edit post </span>".html_safe , edit_post_path(post.id) %> <%= link_to "<span class='glyphicon glyphicon-trash'> Borrar post </span>".html_safe , post_path(post.id), method: :delete%></p>
       </div>
       <%end%>
     </div>
