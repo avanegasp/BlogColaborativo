@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
 
   def index
     @post = Post.all
@@ -33,7 +33,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    redirect_to post_path
   end
 
   def destroy
