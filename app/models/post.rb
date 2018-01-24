@@ -3,4 +3,5 @@ class Post < ApplicationRecord
   has_many :comments
   validates :title, presence: true
   validates :body, presence: true
+  validates :body,  length: { minimum: 250 }
 end
