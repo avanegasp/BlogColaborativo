@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! 
 
   def index
     @post = Post.all
@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def new 
+  def new
     @post = Post.new
   end
 
