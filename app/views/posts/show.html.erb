@@ -1,16 +1,19 @@
 
+<div class="container">
+  <div class="row">
+      <h1><%=@post.title%></h1>
+      <p><%=@post.user.email%>, <%=@post.created_at%></p>
+      <p> <%=@post.body %></p>
 
-
-    <h1><%=@post.title%></h1>
-    <p><%=@post.user.email%>, <%=@post.created_at%></p>
-    <p> <%=@post.body %></p>
-
-    <%@post.comments.each do |comment| %>
+      <%@post.comments.each do |comment| %>
       <p> <%= comment.user.email%>, <%=comment.created_at %></p>
       <p> <%= comment.body %></p>
-    <% end %>
-    <%= link_to "Ir a los posts", posts_path%>
+      <% end %>
+      <%= link_to "Ir a los posts", posts_path%>
 
-    <%if user_signed_in? %>
+      <%if user_signed_in? %>
       <%= render 'show'  %>
-    <%end%>
+      <%end%>
+
+  </div>
+</div>
