@@ -1,5 +1,5 @@
-<div class="container_partial">
-	<div class="row">	
+<div class="container">
+	<div class="row">
 		<h1><%= form_title %></h1>
 		<% if @post.errors.any? %>
 			<div class="alert alert-danger">
@@ -10,17 +10,19 @@
 				</ul>
 			</div>
 		<% end %>
-		
+
 		<%= form_for @post do |f| %>
 			<div class="form_group">
-				<%= f.text_field :title, class: "form-control input-lg", placeholder:"titulo del post"%>
+				<%= f.text_field :title, class: "form-control input-lg title", placeholder:"Título del post"%>
 			</div>
+			<br>
 			<div class="form_group">
 				<%= f.text_area :body, class: "form-area form-control input-lg", id:"form-area", placeholder:"Escribe tu entrada"%>
 			</div>
+			<br>
 			<div>
 				<%= f.submit form_title, class: "btn btn-primary btn-lg btn-block" %>
-			</div> 
+			</div>
 		<% end %>
 	</div>
 </div>
