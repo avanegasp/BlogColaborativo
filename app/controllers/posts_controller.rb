@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy_all
+    post.destroygit 
     redirect_to posts_path, notice: "El post fue eliminado con exito"
   end
 
