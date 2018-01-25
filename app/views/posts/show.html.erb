@@ -1,24 +1,35 @@
-
 <div class="container">
   <div class="row">
-      <h1><%=@post.title%></h1>
-      <p><%=@post.user.email%>, <%=@post.created_at%></p>
-      <p> <%=@post.body %></p>
-
-
     <h1><%=markdown(@post.title)%></h1>
-    <p><%=@post.user.email%>, <%=@post.created_at%></p>
-    <p> <%=markdown(@post.body) %></p>
-
-    <%@post.comments.each do |comment| %>
-      <p> <%= comment.user.email%>, <%=comment.created_at %></p>
-      <p> <%= markdown(comment.body) %></p>
-    <% end %>
+    <p><%=@post.user.email%>,
+      <%=time(@post)%></p>
+    <p>
+      <%=markdown(@post.body) %></p>
+    <%if @comment.errors.any?%>
+    <div class="alert alert-danger">
+      <ul>
+        <% @comment.errors.full_messages.each do |error|%>
+           <li><%= error %></li>
+        <%end%>
+       </ul>
+    </div>
+      <%else%>
+      <%@post.comments.each do |comment| %>
+      <br>
+        <div class="comments">
+          <p>
+        <%= comment.user.email%>,
+        <%=time(comment) %></p>
+      <p>
+        <%= markdown(comment.body) %></p>
+      </div>
+      <% end %>
+      <%end%>
     <%= link_to "Ir a los posts", posts_path%>
 
-      <%if user_signed_in? %>
-      <%= render 'show'  %>
-      <%end%>
+    <%if user_signed_in? %>
+    <%= render 'show'  %>
+    <%end%>
 
   </div>
 </div>

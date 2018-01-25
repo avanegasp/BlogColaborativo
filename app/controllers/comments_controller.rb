@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save
         redirect_to post_path(@post.id)
       else
+        @comment
         render '/posts/show'
   end
 end

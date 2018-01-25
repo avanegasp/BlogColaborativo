@@ -9,12 +9,13 @@
       <div class="container-post">
         <h2> <%= markdown(post.title) %></h2>
         <p> <%= post.created_at %></p>
+        <p> <%= time(post) %></p>
         <p> <%= post.user.email%></p>
-      <p class="text"><%= markdown(post.body[0..500]) %> ...</p>
+      <p class="text form-group"><%= markdown(post.body[0..500])%></p>
         <p>  <%= link_to "<span class='glyphicon glyphicon-search'>ir al show</span>".html_safe, post_path(post.id) %></p>
       <%if user_signed_in? && current_user.id == post.user.id %>
-        <p>  <%= link_to "<span class='glyphicon glyphicon-pencil'> Edit post </span>".html_safe , edit_post_path(post.id)%>
-            <%= link_to "<span class='glyphicon glyphicon-trash'> Borrar post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Producto?"}%></p>
+         <%= link_to "<span class='glyphicon glyphicon-pencil'> Edit post </span>".html_safe , edit_post_path(post.id)%>
+         <%= link_to "<span class='glyphicon glyphicon-trash'> Borrar post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Producto?"}%></p>
       <%end%>
     </div>
     <%end%>
