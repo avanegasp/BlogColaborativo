@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container_partial">
 	<div class="row">	
 		<h1><%= form_title %></h1>
 		<% if @post.errors.any? %>
@@ -16,7 +16,7 @@
 				<%= f.text_field :title, class: "form-control input-lg", placeholder:"titulo del post"%>
 			</div>
 			<div class="form_group">
-				<%= f.text_area :body, class: "form-control input-lg", placeholder:"Escribe tu entrada"%>
+				<%= f.text_area :body, class: "form-area form-control input-lg", id:"form-area", placeholder:"Escribe tu entrada"%>
 			</div>
 			<div>
 				<%= f.submit form_title, class: "btn btn-primary btn-lg btn-block" %>

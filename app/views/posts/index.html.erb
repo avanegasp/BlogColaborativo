@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="index-row row">
     <div class="col-sm-3 col-sm-offset-8">
     <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-primary" %>
     </div>
 
-    <div class="col-sm-10 col-sm-offset-1">
+    <div class="index-container col-sm-10 col-sm-offset-1">
       <%@post.each do |post|%>
         <div class="container-post">
           <div class="col-sm-4">
@@ -13,10 +13,10 @@
             <p> <%= time(post) %></p>
             <p> <%= post.user.email%></p>
           <p class="text form-group"><%= markdown(post.body[0..500])%></p>
-            <p>  <%= link_to "<span class='glyphicon glyphicon-search'>ir al show</span>".html_safe, post_path(post.id) %></p>
+            <p class="p-index">  <%= link_to "<span class='glyphicon glyphicon-star'>Ir al post</span>".html_safe, post_path(post.id) %></p>
           <%if user_signed_in? && current_user.id == post.user.id %>
-             <%= link_to "<span class='glyphicon glyphicon-pencil'> Edit post </span>".html_safe , edit_post_path(post.id)%>
-             <%= link_to "<span class='glyphicon glyphicon-trash'> Borrar post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Producto?"}%></p>
+             <p class="p-index"> <%= link_to "<span class='glyphicon glyphicon-pencil'> Edit post </span>".html_safe , edit_post_path(post.id)%>
+             <%= link_to "<span class='glyphicon glyphicon-plane'> Borrar post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Producto?"}%></p>
           <%end%>
           </div>
         </div>
