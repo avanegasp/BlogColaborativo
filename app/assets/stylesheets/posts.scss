@@ -5,6 +5,10 @@
 body{
 	background:#f5f5f5;
 }
+
+h2{
+  color: #0051FF;
+}
 .comments{
   border: 1px solid grey;
   margin-top: 5px;
@@ -21,11 +25,12 @@ margin-left: 44px;
 
 .navbar-nav{
   margin-top: 15px;
+  float: right;
 }
 
 form-signin-heading .form-control,
 .btn-sub{
-	width: 400px;
+	width: 362px;
 }
 
 #form-area{
@@ -39,4 +44,8 @@ form-signin-heading .form-control,
 }
 .p-index{
 	text-align:center;
+}
+
+p{
+  text-align: justify;
 }
