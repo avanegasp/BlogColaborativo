@@ -9,9 +9,9 @@
         <div class="container-post">
           <div class="col-sm-4">
             <h2> <%= markdown(post.title) %></h2>
-            <p> <%= post.created_at %></p>
-            <p> <%= time(post) %></p>
-            <p> <%= post.user.email%></p>
+            <p class="unique"> <%= post.created_at %></p>
+            <p class="unique"> <%= time(post) %></p>
+            <p class="unique"> User: <%= post.user.email%></p>
           <p class="text form-group"><%= markdown(post.body[0..500])%></p>
             <p class="p-index">  <%= link_to "<span class='glyphicon glyphicon-star'>Ir al post</span>".html_safe, post_path(post.id) %></p>
           <%if user_signed_in? && current_user.id == post.user.id %>
