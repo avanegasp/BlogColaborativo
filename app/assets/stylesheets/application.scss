@@ -14,4 +14,10 @@
  */
  @import "bootstrap";
  @import "bootstrap-sprockets";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  @import "posts";
+
+ .title .say_hi{
+   margin-right: 120px;
+ }

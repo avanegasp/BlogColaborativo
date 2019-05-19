@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <%= link_to "Ir a los posts", posts_path, class:"btn-primary btn-lg col-sm-offset-10"%>
     <h1><%=markdown(@post.title)%></h1>
     <p><%=@post.user.email%>,
       <%=time(@post)%></p>
@@ -14,18 +15,19 @@
        </ul>
     </div>
       <%else%>
-      <%@post.comments.each do |comment| %>
-      <br>
-        <div class="comments">
-          <p>
-        <%= comment.user.email%>,
-        <%=time(comment) %></p>
-      <p>
-        <%= markdown(comment.body) %></p>
+      <div class="form-group">
+        <%@post.comments.each do |comment| %>
+          <br>
+            <div class="comments">
+                <%= comment.user.email%>
+                <%=time(comment)%>
+              <div class="comment-body">
+                <%= markdown(comment.body)%>
+              </div>
+            </div>
+        <% end %>
+    <%end%>
       </div>
-      <% end %>
-      <%end%>
-    <%= link_to "Ir a los posts", posts_path%>
 
     <%if user_signed_in? %>
     <%= render 'show'  %>
