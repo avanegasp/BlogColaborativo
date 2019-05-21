@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'devise'
 gem 'redcarpet', '~> 3.0.0'
