@@ -15,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    byebug
     @post = Post.new(params_post)
     if @post.save
       redirect_to posts_path, notice: "Tu entrada se ha guardado con exito."
