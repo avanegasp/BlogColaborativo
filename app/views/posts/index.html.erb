@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="index-row row">
-    <div class="col-sm-3 col-sm-offset-8">
+  <div class="row ">
     <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-primary" %>
     </div>
     <div class="index-container col-sm-10 col-sm-offset-1">
@@ -30,9 +28,6 @@
              <p class="p-index"> <%= link_to "<span class='glyphicon glyphicon-pencil'> Editar el post </span>".html_safe , edit_post_path(post.id)%>
              <%= link_to "<span class='glyphicon glyphicon-pencil'> Borrar el post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
           <%end%>
-          </div>
-        </div>
       <%end%>
     </div>
   </div>
-</div>
