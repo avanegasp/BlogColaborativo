@@ -12,8 +12,8 @@
 		<% end %>
 
 		<%= form_for @post do |f| %>
-			<div class="field">
-				 <%= f.file_field :cover_picture %>
+			<div class="form_group">
+				 <%= f.file_field :header_image, class: "form-control" %>
 			</div>
 			<div class="form_group">
 				<%= f.text_field :title, class: "form-control input-lg title", placeholder:"Título del post"%>
@@ -21,6 +21,9 @@
 			<br>
 			<div class="form_group">
 				<%= f.text_area :body, class: "form-area form-control input-lg", id:"form-area", placeholder:"Escribe tu entrada"%>
+			</div>
+			<div class="form_group">
+				 <%= f.file_field :uploads, multiple: true,  class: "form-control" %>
 			</div>
 			<br>
 			<div>
