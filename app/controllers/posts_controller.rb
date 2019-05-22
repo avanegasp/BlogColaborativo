@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    byebug
     @post = Post.new(params_post)
     if @post.save
       redirect_to posts_path, notice: "Tu entrada se ha guardado con exito."
@@ -44,7 +45,6 @@ class PostsController < ApplicationController
 
   private
   def params_post
-    params.require(:post).permit(:title, :body).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :cover_picture).merge(user_id: current_user.id)
   end
-
 end

@@ -21,6 +21,9 @@
             <div class="comments">
                 <%= comment.user.email%>
                 <%=time(comment)%>
+              <% if @post.cover_picture.attachment? %>
+                <%= image_tag @post.cover_picture.variant(resize: '750x750') %>
+              <% end %>
               <div class="comment-body">
                 <%= markdown(comment.body)%>
               </div>

@@ -12,6 +12,9 @@
 		<% end %>
 
 		<%= form_for @post do |f| %>
+			<div class="field">
+				 <%= f.file_field :cover_picture %>
+			</div>
 			<div class="form_group">
 				<%= f.text_field :title, class: "form-control input-lg title", placeholder:"Título del post"%>
 			</div>
