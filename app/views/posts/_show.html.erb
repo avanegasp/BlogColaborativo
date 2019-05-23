@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="col-md-8 col-md-offset-2">
     <%=form_for [@post, @post.comments.new] do |f|%>
     <div class="form-group">
       <%=f.text_area :body, class: "form-control input-lg", placeholder:"Ingresa un comentario"%>
+      <%=f.submit "Agrega tu comentario", class: "btn btn-primary btn-lg btn-block"%>
     </div>
-    <%=f.submit "Agrega tu comentario", class: "btn btn-primary btn-lg btn-block"%>
     <%end%>
   </div>
 </div>

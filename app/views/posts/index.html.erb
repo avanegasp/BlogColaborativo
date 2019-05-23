@@ -1,33 +1,38 @@
   <div class="row ">
-    <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-primary" %>
-    </div>
-    <div class="index-container col-sm-10 col-sm-offset-1">
-      <%@post.each do |post|%>
-        <div class="container-post">
-          <div class="col-sm-4">
-            <h2> <%= markdown(post.title)%></h2>
-            <% if post.header_image.attached? %>
-              <%=image_tag post.header_image.variant(resize: "400x400")%>
-            <p class="unique"> <%= post.created_at %></p>
-            <p class="unique"> <%= time(post) %></p>
-            <p class="unique"> Usuario: <%= post.user.email%></p>
-          <div class="text form-group body-post">
-            <p><%= markdown(post.body[0..500])%></p>
-          </div>
-            <p class="p-index">  <%= link_to "<span class='glyphicon glyphicon-pencil'>Leer todo el post</span>".html_safe, post_path(post.id) %></p>
-          <% else %>
-            <p class="unique"> <%= post.created_at %></p>
-            <p class="unique"> <%= time(post) %></p>
-            <p class="unique"> Usuario: <%= post.user.email%></p>
-          <div class="text form-group body-post">
-            <p><%= markdown(post.body[0..500])%></p>
-          </div>
-            <p class="p-index">  <%= link_to "<span class='glyphicon glyphicon-pencil'>Leer todo el post</span>".html_safe, post_path(post.id) %></p>
-        <% end %>
-          <%if user_signed_in? && current_user.id == post.user.id %>
-             <p class="p-index"> <%= link_to "<span class='glyphicon glyphicon-pencil'> Editar el post </span>".html_safe , edit_post_path(post.id)%>
-             <%= link_to "<span class='glyphicon glyphicon-pencil'> Borrar el post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
-          <%end%>
-      <%end%>
+      <div class="row">
+        <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-primary" %>
+            <div class="col-md-8 col-md-offset-2">
+        <%@posts.each do |post|%>
+            <div class="col-md-12">
+              <a href="/posts/<%=post.id%>"><h1><%= post.title %></h1></a>
+            </div>
+              <% if post.header_image.attached? %>
+              <div class="col-md-12">
+                <p class="unique"> <%= post.created_at %></p>
+                <p class="unique"> <%= time(post) %></p>
+                <p class="unique"> Usuario: <%= post.user.email%></p>
+              </div>
+              <div class="col-md-5">
+                <%=image_tag post.header_image.variant(resize: "300x300")%>
+              </div>
+            <div class="col-md-7 text form-group body-post">
+              <p><%= markdown(post.body[0..500])%></p>
+            </div>
+            <% else %>
+            <div class="col-md-12">
+              <p class="unique"> <%= post.created_at %></p>
+              <p class="unique"> <%= time(post) %></p>
+              <p class="unique"> Usuario: <%= post.user.email%></p>
+            </div>
+            <div class="text form-group body-post">
+              <p><%= markdown(post.body[0..500])%></p>
+            </div>
+          <% end %>
+            <%if user_signed_in? && current_user.id == post.user.id %>
+               <p class="p-index"> <%= link_to "<span class='glyphicon glyphicon-pencil'> Editar el post </span>".html_safe , edit_post_path(post.id)%>
+               <%= link_to "<span class='glyphicon glyphicon-pencil'> Borrar el post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
+            <%end%>
+        <%end%>
+      </div>
     </div>
   </div>
