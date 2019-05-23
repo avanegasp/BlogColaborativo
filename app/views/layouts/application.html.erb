@@ -11,18 +11,18 @@
 
     <nav class="navbar navbar-dark bg-warning">
       <a class="navbar-brand" href="/posts">Blog Colaborativo</a>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav title">
-      <%if user_signed_in?%>
-        <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.email%>
-        <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete'%></a>
-      <%else%>
-        <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path%></a>
-        <a class="signout nav-item nav-link" href="#"><%=link_to "Regístrate", new_user_registration_path%></a>
-      </div>
-    <%end%>
-      </div><!-- Navbar content -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color:#FF8F66">
+          <div class="navbar-nav title" >
+            <%if user_signed_in?%>
+              <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.email%>
+              <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete'%></a>
+              <%else%>
+              <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path%></a>
+              <a class="signout nav-item nav-link" href="#"><%=link_to "Regístrate", new_user_registration_path%></a>
+            </div>
+          <%end%>
+        </div><!-- Navbar content -->
     </nav>
 
   <% if flash[:notice] %>
