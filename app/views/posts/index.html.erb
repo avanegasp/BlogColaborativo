@@ -29,8 +29,8 @@
             </div>
           <% end %>
             <%if user_signed_in? && current_user.id == post.user.id %>
-               <p class="p-index"> <%= link_to "<span class='glyphicon glyphicon-pencil'> Editar el post </span>".html_safe , edit_post_path(post.id)%>
-               <%= link_to "<span class='glyphicon glyphicon-pencil'> Borrar el post </span>".html_safe , post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
+               <p class="p-index"> <%= link_to "Editar el post", edit_post_path(post.id)%></p>
+               <p><%= link_to "Borrar el post", post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
             <%end%>
         <%end%>
       </div>
