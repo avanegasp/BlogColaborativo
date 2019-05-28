@@ -5,25 +5,32 @@
         <div class="col-md-5 col-md-offset-2">
           <h1><%=markdown(@post.title)%></h1>
           <% if @post.header_image.attached? %>
-            <p><%=@post.user.email%>,<%=time(@post)%></p>
-            <%=image_tag @post.header_image.variant(resize: "300x300")%>
+            <p style="margin-bottom:50px;"><%=@post.user.email%>,<%=time(@post)%></p>
+          <div class="" style="margin-left:50px;">
+          <div >
+            <%=image_tag @post.header_image.variant(resize: "500x300")%>
+          </div>
+          </div>
         </div>
-        <div class="col-md-7 col-md-offset-2">
-          <p><%=markdown(@post.body)%></p>
+        <div class="col-md-7 col-md-offset-2" style="margin-bottom:50px;margin-top:50px;">
+          <div class="" style="margin-bottom:50px;">
+            <p><%=markdown(@post.body)%></p>
+          </div>
           <% @post.uploads.each do |upload|%>
             <% if upload.variable?%>
-                <%=link_to image_tag(upload.variant(resize: "300x300")), upload%>
+                <%=link_to image_tag(upload.variant(resize: "100x100")), upload%>
               <% elsif upload.previewable?%>
-                <%=link_to image_tag(upload.preview(resize: "300x300")), rails_blob_path(upload, disposition: :attachment)%>
+              <h3>Descarga la Imagen</h3>
+                <%=link_to image_tag(upload.preview(resize: "100x100")), rails_blob_path(upload, disposition: :attachment)%>
               <% elsif upload.image?%>
                 <%=link_to image_tag(upload, width: 300), upload%>
               <% else %>
                 <%=link_to upload.filename, rails_blob_path(upload, disposition: :attachment)%>
             <%end%>
           <%end%>
+          <h5 style="color:blue;">Mira los archivos Adjuntos</h5>
         </div>
       </div>
-
         <% else %>
           <%= render 'local'  %>
         <%end%>
