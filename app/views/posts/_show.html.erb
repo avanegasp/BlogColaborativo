@@ -3,8 +3,9 @@
     <%=form_for [@post, @post.comments.new] do |f|%>
     <div class="form-group">
       <%=f.text_area :body, class: "form-control input-lg", placeholder:"Ingresa un comentario"%>
-      <%=f.submit "Agrega tu comentario", class: "btn btn-primary btn-lg btn-block"%>
     </div>
+      <br>
+      <%=f.submit "Agrega tu comentario", class: "btn btn-success btn-lg btn-block"%>
     <%end%>
   </div>
 </div>

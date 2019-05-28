@@ -1,7 +1,7 @@
 module PostsHelper
 
 	def form_title
-		@post.new_record? ? "Publicar post" : "Editar post"
+		@post.new_record? ? "Publica tu post" : "Edita tu post"
 	end
 
 	def time(post)

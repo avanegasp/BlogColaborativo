@@ -8,15 +8,14 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-dark bg-warning">
-      <a class="navbar-brand" href="/posts">Blogueando</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color:#FF8F66">
+      <a class="navbar-brand navbar-name" href="/posts" >Blogueando</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color:yellow";>
           <div class="navbar-nav title" >
             <%if user_signed_in?%>
               <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.email%>
               <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete'%></a>
+              <a class="nav-item nav-link col-md-offset-2" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete', style:"font-size:20px; color:black; text-decoration:underline;" ;%></a>
               <%else%>
               <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path%></a>
               <a class="signout nav-item nav-link" href="#"><%=link_to "Regístrate", new_user_registration_path%></a>
@@ -31,5 +30,7 @@
   	</div>
   <% end %>
     <%= yield %>
+
+    <footer style="color:white;"> © 2019 <strong> Blogueando </strong>, Todos los Derechos Reservados </footer>
   </body>
 </html>

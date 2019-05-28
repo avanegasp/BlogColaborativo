@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <%= link_to "Ir a los posts", posts_path, class:"btn-primary btn-lg col-sm-offset-10"%>
+    <%= link_to "Ir a los posts", posts_path, class:"btn-danger btn-lg col-sm-offset-10"%>
       <div class="col-md-12">
         <div class="col-md-5 col-md-offset-2">
-          <h1><%=markdown(@post.title)%></h1>
+          <h1 style="color:#337ab7;"><%=markdown(@post.title)%></h1>
           <% if @post.header_image.attached? %>
             <p style="margin-bottom:50px;"><%=@post.user.email%>,<%=time(@post)%></p>
           <div class="" style="margin-left:50px;">
@@ -20,7 +20,7 @@
             <% if upload.variable?%>
                 <%=link_to image_tag(upload.variant(resize: "100x100")), upload%>
               <% elsif upload.previewable?%>
-              <h3>Descarga la Imagen</h3>
+              <h5 style="color:blue;">Descarga la Imagen</h5>
                 <%=link_to image_tag(upload.preview(resize: "100x100")), rails_blob_path(upload, disposition: :attachment)%>
               <% elsif upload.image?%>
                 <%=link_to image_tag(upload, width: 300), upload%>
