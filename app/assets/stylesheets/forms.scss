@@ -1,5 +1,4 @@
 .register{
-  background-image: url( <%= asset_path 'fondo1.jpg' %> );
   height: auto;
   width: 100%;
       background-position: bottom;
@@ -11,5 +10,8 @@
         background: #000000;
         z-index: 1000;
         display: inline-grid;
+        height: auto;
     // opacity: .5;
+    // background: asset-data-url('fondo1.jpg') repeat-x center top;
+
 }
