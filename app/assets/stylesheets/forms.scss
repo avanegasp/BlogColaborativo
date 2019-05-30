@@ -1,5 +1,5 @@
 .register{
-  background: image-url("fondo1.jpg");
+  background: image-url("fondo1.jpg")no-repeat center top;
   height: auto;
   width: 100%;
       background-position: bottom;
@@ -13,6 +13,6 @@
         display: inline-grid;
         height: auto;
     // opacity: .5;
-    // background: asset-data-url('fondo1.jpg') repeat-x center top;
+    // background: asset-data-url('fondo1.jpg') ;
 
 }
