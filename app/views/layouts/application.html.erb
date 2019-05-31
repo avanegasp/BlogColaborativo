@@ -14,8 +14,8 @@
           <div class="navbar-nav title" >
             <%if user_signed_in?%>
               <div>
-                <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.email%>
-                  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.first_name%> <%=current_user.last_name%>
+                  <!-- <span class="sr-only">(current)</span></a> -->
               </div>
               <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete', style:"font-size:20px; color:#ffffff; text-decoration:underline;" ;%></a>
               <%else%>

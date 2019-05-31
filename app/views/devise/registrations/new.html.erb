@@ -1,29 +1,30 @@
 <div class="register container" style="background-image:url(/assets/fondo1.jpg);">
-  <div class="col-sm-offset-10">
-    <%= render "devise/shared/links" %>
-  </div>
   <div class="row">
-    <div class="col-md-4 col-md-offset-1">
+    <div class="col-sm-4 col-md-4 col-sm-offset-4">
+      <h1 style="color:#ffffff;font-size:70px;text-align:left;">BLOGUEANDO</h1>
+      <p style="font-size:20px;color:red;text-align:justify;">Es un espacio para que podamos construír una comunidad donde podamos escríbir con <strong>libertad*</strong> y respeto lo que nos gusta!</p>
+      <p style="font-size:12px;">*Todo Post y comentario que sea ofensivo se borrará</p>
       <!-- <h2>Regístrate</h2> -->
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
         <%= devise_error_messages! %>
-        <div class="field">
+
+          <h4 style="color:black">Nombre</h4>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "nombre", class: 'form-control input-lg', placeholder:'Nombre' %>
+
+          <h4 style="color:black">apellido</h4>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "apellido", class:"form-control input-lg", placeholder: 'Apellido' %>
+
           <h4 style="color:black">Correo electrónico</h4>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control input-lg',placeholder: 'Correo electrónico' %>
-        </div>
-        <br>
-        <div class="field">
+
           <h4 style="color:black">Contraseña</h4><%= f.password_field :password, autocomplete: "off" , class:'form-control input-lg',placeholder: 'Contraseña'%>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> carácteres mínimo)</em>
           <% end %>
-        </div>
 
-        <div class="field">
           <h4 style="color:black">Confirma contraseña</h4>
           <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-lg',placeholder: 'Confirmar contraseña' %>
-        </div>
         <br>
         <br>
         <div class="actions">
@@ -33,10 +34,8 @@
       <% end %>
     </div>
 
-    <div class="col-md-4 col-md-offset-1">
-      <h1 style="color:#ffffff;font-size:70px;">BLOGUEANDO</h1>
-      <p style="font-size:20px;color:red;text-align:justify;">Es un espacio para que podamos construír una comunidad donde podamos escríbir con <strong>libertad*</strong> y respeto lo que nos gusta!</p>
-      <p style="font-size:12px;">*Todo Post y comentario que sea ofensivo se borrará</p>
+    <div class="col-sm-offset-10">
+      <%= render "devise/shared/links" %>
     </div>
 
   </div>

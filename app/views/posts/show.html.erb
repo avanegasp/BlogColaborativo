@@ -5,7 +5,9 @@
         <div class="col-md-8 col-md-offset-2">
           <h1 style="color:#337ab7;"><%=markdown(@post.title)%></h1>
           <% if @post.header_image.attached? %>
-            <p style="margin-bottom:50px;"><%=@post.user.email%>,<%=time(@post)%></p>
+            <p>Creado por: <%= @post.user.first_name%> <%= @post.user.last_name%> (<%=@post.user.email%>)</p>
+            <p style="margin-bottom:20px"></p>
+            <p><%=time(@post)%></p>
           <div class="" style="margin-left:50px;">
           <div >
             <%=image_tag @post.header_image.variant(resize: "500x300")%>

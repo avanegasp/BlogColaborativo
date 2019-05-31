@@ -8,9 +8,10 @@
             </div>
               <% if post.header_image.attached? %>
               <div class="col-md-12">
-                <p class="unique"> <%= post.created_at %></p>
+                <!-- <p class="unique"> <%= post.created_at %></p> -->
                 <p class="unique"> <%= time(post) %></p>
-                <p class="unique" style="margin-bottom:30px;"> Usuario: <%= post.user.email%></p>
+                <p class="unique"> <%= post.user.first_name%> <%=post.user.last_name%></p>
+                <p class="unique" style="margin-bottom:30px;"> <%= post.user.email%></p>
               </div>
               <div class="">
                 <div class="col-md-5">
