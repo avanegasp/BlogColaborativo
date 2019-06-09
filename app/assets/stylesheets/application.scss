@@ -29,10 +29,15 @@
    height: 100%;
  }
 
- .title .say_hi{
+ .title{
+    margin-top: 20px;
+}
+
+ .say_hi{
    // margin-right: 120px;
+   padding:45px 60px;
    font-size:20px;
-   line-height: 3;
+   line-height: 1;
    color: red;
  }
 
