@@ -5,9 +5,6 @@ class ThemesController < ApplicationController
      @posts = @theme.posts.order("id DESC").all
   end
 
-  def show
-    @theme = Theme.find(params[:id])
-    @post = @theme.posts.find(params[:theme_id])
-  end
+
 
 end
