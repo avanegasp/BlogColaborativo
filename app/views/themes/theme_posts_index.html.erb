@@ -1,0 +1,57 @@
+<div class="col-md-offset-9">
+  <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-danger" %>
+</div>
+
+<div class="container" style="margin-top:120px;">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+      <%@posts.each do |post|%>
+          <div class="col-md-12">
+            <a href="/posts/<%=post.id%>"><h1><%= post.title %></h1></a>
+            <%if%>
+              <% post.theme_id == 1%>
+              <p>Tema: <%= "Tecnología" %></p>
+            <%elsif%>
+              <% post.theme_id == 2%>
+              <p>Tema: <%= "Series" %></p>
+            <%else%>
+              <p>Tema: <%= "Programación" %></p>
+            <%end%>
+          </div>
+            <% if post.header_image.attached? %>
+            <div class="col-md-12">
+              <!-- <p class="unique"> <%= post.created_at %></p> -->
+              <p class="unique"> <%= time(post) %></p>
+              <p class="unique"> <%= post.user.first_name%> <%=post.user.last_name%></p>
+              <p class="unique" style="margin-bottom:30px;"> <%= post.user.email%></p>
+            </div>
+            <div class="">
+              <div class="col-md-5">
+                <%=image_tag post.header_image.variant(resize: "300x300")%>
+              </div>
+              <div class="col-md-7 text form-group body-post">
+                <%= markdown(post.body[0..500])%>
+              </div>
+            </div>
+          <% else %>
+          <div class="col-md-12">
+            <p class="unique"> <%= post.created_at %></p>
+            <p class="unique"> <%= time(post) %></p>
+            <p class="unique"> Usuario: <%= post.user.email%></p>
+          </div>
+          <div class="text form-group body-post">
+            <p><%= markdown(post.body[0..500])%></p>
+          </div>
+        <% end %>
+          <%if user_signed_in? && current_user.id == post.user.id %>
+          <div class="col-md-offset-2">
+            <p class="p-index"> <%= link_to "Editar el post", edit_post_path(post.id)%> -
+            <%= link_to "Borrar el post", post_path(post.id), method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?"}%></p>
+          </div>
+          <%end%>
+          <br>
+          <hr>
+      <%end%>
+    </div>
+  </div>
+</div>

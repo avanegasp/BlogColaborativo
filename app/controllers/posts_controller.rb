@@ -3,6 +3,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order("id DESC").all
+    @tech_theme = Theme.find_by(theme_name:"Tecnología")
+    @programation_theme = Theme.find_by(theme_name:"Programación")
+    @series_theme = Theme.find_by(theme_name:"Series")
   end
 
   def show
@@ -14,8 +17,11 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+# @post = Post.find(params[:id])
+# @comments = @post.comments.create(params[:comment])
   def create
-    @post = Post.new(params_post)
+    @theme = Theme.find(params[:post][:theme_id])
+    @post = @theme.posts.new(params_post)
     if @post.save
       redirect_to posts_path, notice: "Tu entrada se ha guardado con exito."
     else
@@ -44,6 +50,6 @@ class PostsController < ApplicationController
 
   private
   def params_post
-    params.require(:post).permit(:title, :body, :header_image, uploads:[]).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :theme_id, :header_image, uploads:[]).merge(user_id: current_user.id)
   end
 end

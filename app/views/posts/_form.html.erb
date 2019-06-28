@@ -1,3 +1,4 @@
+
 <div class="container" style="width:70%;margin-top:110px;">
 	<div class="row">
 		<h1><%= form_title %></h1>
@@ -10,10 +11,17 @@
 				</ul>
 			</div>
 		<% end %>
-
+		<br>
+		<br>
 		<%= form_for @post do |f| %>
 			<div class="form_group">
 				 <%= f.file_field :header_image, class: "form-control" %>
+			</div>
+			<div class="btn-group">
+				<div class="col-sm-12">
+					<%=label_tag(:theme_name, "theme")%>
+					<%= f.collection_select :theme_id, Theme.all,:id,:theme_name, {}, class: "form-control"%>
+				</div>
 			</div>
 			<br>
 			<div class="form_group">

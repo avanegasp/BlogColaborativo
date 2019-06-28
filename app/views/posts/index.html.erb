@@ -1,10 +1,27 @@
-<%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-danger col-md-offset-9" %>
+<div class="col-md-offset-3">
+  <%= link_to "Programación",theme_posts_path(@programation_theme.id), class: "btn btn-primary" %>
+  <%= link_to "Series",theme_posts_path(@series_theme.id), class: "btn btn-primary" %>
+  <%= link_to "Tecnología",theme_posts_path(@tech_theme.id), class: "btn btn-primary" %>
+
+  <div class="col-md-offset-9">
+    <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-danger" %>
+  </div>
+</div>
   <div class="container" style="margin-top:120px;">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
         <%@posts.each do |post|%>
             <div class="col-md-12">
               <a href="/posts/<%=post.id%>"><h1><%= post.title %></h1></a>
+              <%if%>
+                <% post.theme_id == 1%>
+                <p>Tema: <%= "Tecnología" %></p>
+              <%elsif%>
+                <% post.theme_id == 2%>
+                <p>Tema: <%= "Series" %></p>
+              <%else%>
+                <p>Tema: <%= "Programación" %></p>
+              <%end%>
             </div>
               <% if post.header_image.attached? %>
               <div class="col-md-12">
