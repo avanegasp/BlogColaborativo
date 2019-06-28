@@ -12,15 +12,15 @@
     <nav class="navbar navbar-dark bg-warning">
       <a class="navbar-brand navbar-name" href="/posts" style="color:#ffffff">Blogueando</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-color:#000000";>
-          <div class="navbar-nav title" >
+          <div class="title col-md-offset-8" >
             <%if user_signed_in?%>
               <div>
                 <a class="nav-item nav-link active say_hi" href="#">Bienvenido(a)!! <%=current_user.first_name%> <%=current_user.last_name%>
                   <!-- <span class="sr-only">(current)</span></a> -->
               </div>
               <div class="">
-                <div class="col-sm-offset-12">
-                  <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete', style:"font-size:20px; color:#ffffff;padding:45px 90px; text-decoration:underline;" ;%></a>
+                <div class="">
+                  <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete', style:"font-size:20px; color:#ffffff;padding:45px 90px; text-decoration:underline;float:right;" ;%></a>
                 </div>
                 <%else%>
                 <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path, style:"font-size:20px;"%></a>
