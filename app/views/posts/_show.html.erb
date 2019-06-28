@@ -1,4 +1,4 @@
-    <div class="col-sm-12">
+    <div class="col-md-offset-2 col-sm-offset-2">
       <%=form_for [@post, @post.comments.new] do |f|%>
       <div class="form-group">
         <%=f.text_area :body, class: "form-control input-lg", placeholder:"Ingresa un comentario"%>

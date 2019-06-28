@@ -47,11 +47,11 @@
           </div>
 
           <%else%>
-          <div class="comments col-md-8">
+          <div class="comments col-md-8 col-sm-offset-2">
             <h2>Comentarios</h2>
             <% @post.comments.each do |comment| %>
             <hr>
-            <div class="panel panel-default">
+            <div class="panel panel-default col-md-8 col-sm-offset-2">
               <header class="panel-heading"><%= comment.user.email %></header>
               <div class="panel-body"><%= comment.body %></div>
             </div>

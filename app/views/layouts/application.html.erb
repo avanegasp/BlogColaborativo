@@ -23,8 +23,10 @@
                   <a class="nav-item nav-link" href="#"><%=link_to "Salir", destroy_user_session_path, :method => 'delete', style:"font-size:20px; color:#ffffff;padding:45px 90px; text-decoration:underline;float:right;" ;%></a>
                 </div>
                 <%else%>
-                <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path, style:"font-size:20px;"%></a>
-                <a class="signout nav-item nav-link" href="#"><%=link_to "Regístrate", new_user_registration_path, style:"font-size:20px;"%></a>
+                <div class="col-sm-offset-6 col-md-offset-2">
+                  <a class="sign nav-item nav-link" href="#"><%=link_to "Iniciar Sesión", new_user_session_path, style:"font-size:20px;"%></a>
+                  <a class="signout nav-item nav-link" href="#"><%=link_to "Regístrate", new_user_registration_path, style:"font-size:20px;"%></a>
+                </div>
               </div>
             </div>
           <%end%>
