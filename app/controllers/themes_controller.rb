@@ -6,7 +6,6 @@ class ThemesController < ApplicationController
   end
 
   def show
-    byebug
     @theme = Theme.find(params[:id])
     @post = @theme.posts.find(params[:theme_id])
   end
