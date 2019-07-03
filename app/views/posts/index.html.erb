@@ -1,7 +1,19 @@
-<div class="col-md-offset-3">
+<div class="col-md-offset-3 col-sm-offset-2">
+  <div class="col-md-offset-9 col-sm-offset-9">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">
+      Porque Blogueando?
+    </button>
+    <!-- /Button trigger modal -->
+  </div>
+
   <%= link_to "Programación",theme_posts_path(@programation_theme.id), class: "btn btn-primary" %>
   <%= link_to "Series",theme_posts_path(@series_theme.id), class: "btn btn-primary" %>
   <%= link_to "Tecnología",theme_posts_path(@tech_theme.id), class: "btn btn-primary" %>
+
+<!-- Modal -->
+  <%= render 'modal'%>
+<!--  /Modal-->
 
   <div class="col-md-offset-9 col-sm-offset-9">
     <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-danger" %>

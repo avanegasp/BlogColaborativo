@@ -1,9 +1,9 @@
-<div class="register container" style="background-image:url(/assets/person.png);background-size:cover;">
+<div class="register container" style="background-image:url(/assets/aviones.jpg);background-size:contain;">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
 
 
-    <h2>Olvidaste la contraseña?</h2>
+    <h2>Olvidaste tu contraseña?</h2>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= devise_error_messages! %>
@@ -14,7 +14,7 @@
       </div>
       <br>
       <div class="actions">
-        <%= f.submit "Enviarme las instrucciones", class: 'form-control input-lg', style:"background-color:#5cb85c; color:#ffffff" %>
+        <%= f.submit "Envíame las instrucciones", class: 'form-control input-lg', style:"background-color:#5cb85c; color:#ffffff" %>
       </div>
     <% end %>
     <br>

@@ -1,11 +1,7 @@
-<div class="register container" style="background-image:url(/assets/person.png);background-size:cover;">
+<div class="register container" style="background-image:url(/assets/aviones.jpg);background-size:contain;">
   <div class="row">
-    <h1 style="color:#000000;font-size:70px;text-align:center;">BLOGUEANDO</h1>
+    <h1 class="col-md-6 col-md-6" style="color:#097768;font-size:50px;">BLOGUEANDO</h1>
     <div class="col-sm-4 col-md-4 col-sm-offset-4">
-      <!-- <p style="font-size:20px;color:red;text-align:justify;">Es un espacio para que podamos construír una comunidad donde podamos escríbir con <strong>libertad*</strong> y respeto lo que nos gusta!</p>
-      <p style="font-size:12px;">*Todo Post y comentario que sea ofensivo se borrará</p>
-      <!-- <h2>Regístrate</h2> -->
-
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"}) do |f| %>
         <%= devise_error_messages! %>
 

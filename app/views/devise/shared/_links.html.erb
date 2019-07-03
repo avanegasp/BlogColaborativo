@@ -1,9 +1,9 @@
 <%- if controller_name != 'sessions' %>
-  <%= button_to "Iniciar sesión", new_session_path(resource_name), class:"btn", style:"color:black; font-size:20px; background-color:yellow" %><br />
+  <%= button_to "Iniciar sesión", new_session_path(resource_name), class:"btn btn-success", style:"font-size:20px;" %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Regístrate", new_registration_path(resource_name), class:"btn", style:"color:black; font-size:20px; background-color:yellow"%><br />
+  <%= link_to "Regístrate", new_registration_path(resource_name), class:"btn btn-success", style:"font-size:20px";%><br />
 <% end -%>
 <br>
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
