@@ -11,8 +11,8 @@
   <body>
     <nav class="navbar navbar-dark bg-warning">
       <a class="navbar-brand navbar-name" href="/posts" style="color:#ffffff">Blogueando</a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-image:url(/assets/gatoarriba.png);"
-        >
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="background-image:url(/assets/buho.jpg);background-size:contain;">
+
           <div class="title col-md-offset-8" >
             <%if user_signed_in?%>
               <div>
@@ -41,7 +41,7 @@
   <% end %>
     <%= yield %>
 
-    <footer style="color:white; background-image:url(/assets/person.png);"> © 2019 <strong> Blogueando </strong>, Todos los Derechos Reservados
+    <footer style="color:white; background-size: contain; background-image:url(/assets/person.png);"> © 2019 <strong> Blogueando </strong>, Todos los Derechos Reservados
     <p class="col-md-offset-2" style="color:red;">Blogueando es un espacio dedicado a la creatividad y diversión *expresada de manera escrita a través de un blog.</p>
     <p class="col-md-offset-8" style="color:blue; font-size:10px;">*Cualquier blog y/o comentario que sea irrespetuoso será eliminado inmediatamente.</p>
      </footer>
