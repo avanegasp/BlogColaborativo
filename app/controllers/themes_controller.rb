@@ -4,7 +4,4 @@ class ThemesController < ApplicationController
      @theme = Theme.find(params[:theme_id])
      @posts = @theme.posts.order("id DESC").all
   end
-
-
-
 end
