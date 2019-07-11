@@ -1,7 +1,9 @@
 <div class="col-md-offset-9 col-sm-offset-9">
   <%= link_to " <--- Ir a todos los blogs",posts_path, class: "btn btn-primary" %>
 </div>
+
 <br>
+
 <div class="col-md-offset-9 col-sm-offset-9">
   <%= link_to "Crear un nuevo post", new_post_path, class: "btn btn-danger" %>
 </div>
@@ -26,7 +28,6 @@
           </div>
             <% if post.header_image.attached? %>
             <div class="col-md-12">
-              <!-- <p class="unique"> <%= post.created_at %></p> -->
               <p class="unique"> <%= time(post) %></p>
               <p class="unique"> <%= post.user.first_name%> <%=post.user.last_name%></p>
               <p class="unique" style="margin-bottom:30px;"> <%= post.user.email%></p>

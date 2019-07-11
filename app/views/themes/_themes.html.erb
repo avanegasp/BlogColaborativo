@@ -1,21 +1,11 @@
-<div class="col-md-8 col-md-offset-3 col-sm-offset-2">
-<%@posts.each do |post|%>
+<div class="col-md-8 col-md-offset-2 col-sm-offset-2">
   <div class="col-md-12">
-    <%if%>
-      <% post.theme_id == 1%>
-        <%= link_to "Programación",theme_posts_path(theme_id:3), class: "btn btn-primary" %>
-        <%= link_to "Series",theme_posts_path(theme_id:2), class: "btn btn-primary" %>
-        <%= link_to "Tecnología",theme_posts_path(theme_id:1), class: "btn btn-success" %>
-    <%elsif%>
-      <% post.theme_id == 2%>
-        <%= link_to "Programación",theme_posts_path(theme_id:3), class: "btn btn-primary" %>
-        <%= link_to "Series",theme_posts_path(theme_id:2), class: "btn btn-success" %>
-        <%= link_to "Tecnología",theme_posts_path(theme_id:1), class: "btn btn-primary" %>
-    <%else%>
-      <%= link_to "Programación",theme_posts_path(theme_id:3), class: "btn btn-success" %>
-      <%= link_to "Series",posts_path(theme_id:2), class: "btn btn-primary" %>
-      <%= link_to "Tecnología",posts_path(theme_id:1), class: "btn btn-primary" %>
-    <%end%>
+    <% if @theme.theme_name == "Tecnología"%>
+      <div class="btn btn-success"><%=@theme.theme_name%></div>
+    <% elsif @theme.theme_name == "Series"%>
+      <div class="btn btn-success"><%=@theme.theme_name%></div>
+    <% else %>
+    <div class="btn btn-success"><%=@theme.theme_name%></div>
+    <% end %>
   </div>
-<%end%>
 </div>
