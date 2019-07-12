@@ -2,7 +2,7 @@
   <div class="col-md-offset-9 col-sm-offset-9">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalScrollable">
-      Porque Blogueando?
+      Porqué Blogueando?
     </button>
     <!-- /Button trigger modal -->
   </div>
@@ -25,22 +25,23 @@
         <%@posts.each do |post|%>
             <div class="col-md-12">
               <a href="/posts/<%=post.id%>"><h1><%= post.title %></h1></a>
-              <%if%>
-                <% post.theme_id == 1%>
-                <p>Tema: <%= "Tecnología" %></p>
-              <%elsif%>
-                <% post.theme_id == 2%>
-                <p>Tema: <%= "Series" %></p>
-              <%else%>
-                <p>Tema: <%= "Programación" %></p>
-              <%end%>
+              <span class="badge badge-dark">
+                <%if%>
+                  <% post.theme_id == 1%>
+                  <p>Tema: <%= "Tecnología" %></p>
+                <%elsif%>
+                  <% post.theme_id == 2%>
+                  <p>Tema: <%= "Series" %></p>
+                <%else%>
+                  <p>Tema: <%= "Programación" %></p>
+                <%end%>
+            </span>
             </div>
               <% if post.header_image.attached? %>
               <div class="col-md-12">
                 <!-- <p class="unique"> <%= post.created_at %></p> -->
-                <p class="unique"> <%= time(post) %></p>
-                <p class="unique"> <%= post.user.first_name%> <%=post.user.last_name%></p>
-                <p class="unique" style="margin-bottom:30px;"> <%= post.user.email%></p>
+                <p class="unique"> <strong><%= time(post) %></strong></p>
+                <p class="unique"> <strong><%= post.user.first_name%> <%=post.user.last_name%> - <%= post.user.email%></strong></p>
               </div>
               <div class="">
                 <div class="col-md-5">

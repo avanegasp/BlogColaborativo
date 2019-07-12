@@ -10,13 +10,13 @@ module PostsHelper
 		diff = timeNow.to_time.to_i - timeCreated.to_time.to_i
 		if diff<3600
 			time = diff/60
-			"Se posteo hace #{time} mínutos"
+			"Se posteó hace #{time} mínutos"
 		elsif diff < 86400
 			time = diff/3600
-			"Se posteo hace #{time} hora(s)"
+			"Se posteó hace #{time} horas"
 		else
 			time = diff/(3600*24)
-			"Se posteo hace #{time} día(s)"
+			"Se posteó hace #{time} días"
 		end
 	end
 end

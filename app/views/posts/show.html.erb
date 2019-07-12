@@ -5,10 +5,10 @@
         <div class="col-md-8 col-md-offset-2">
           <h1 style="color:#337ab7;"><%=markdown(@post.title)%></h1>
           <% if @post.header_image.attached? %>
-            <p>Creado por: <%= @post.user.first_name%> <%= @post.user.last_name%> (<%=@post.user.email%>)</p>
+            <p><strong>Creado por:</strong> <%= @post.user.first_name%> <%= @post.user.last_name%> (<%=@post.user.email%>)</p>
             <p style="margin-bottom:20px"></p>
             <p><%=time(@post)%></p>
-          <div class="" style="margin-left:50px;">
+          <div class="col-md-offset-1 col-sm-offset-1" style="">
           <div >
             <%=image_tag @post.header_image.variant(resize: "500x300")%>
           </div>
@@ -47,11 +47,11 @@
           </div>
 
           <%else%>
-          <div class="comments col-md-8 col-sm-offset-2">
+          <div class="comments col-md-offset-2 col-sm-6">
             <h2>Comentarios</h2>
             <% @post.comments.each do |comment| %>
             <hr>
-            <div class="panel panel-default col-md-8 col-sm-offset-2">
+            <div class="panel panel-default col-md-8">
               <header class="panel-heading"><%= comment.user.email %></header>
               <div class="panel-body"><%= comment.body %></div>
             </div>
