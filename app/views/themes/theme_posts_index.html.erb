@@ -22,6 +22,9 @@
             <%elsif%>
               <% post.theme_id == 2%>
               <p>Tema: <%= "Series" %></p>
+            <%elsif%>
+              <% post.theme_id == 3%>
+              <p>Tema: <%= "Platzi" %></p>
             <%else%>
               <p>Tema: <%= "Programación" %></p>
             <%end%>

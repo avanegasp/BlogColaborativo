@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @tech_theme = Theme.find_by(theme_name:"Tecnología")
     @programation_theme = Theme.find_by(theme_name:"Programación")
     @series_theme = Theme.find_by(theme_name:"Series")
+    @series_theme = Theme.find_by(theme_name:"Platzi")
   end
 
   def show

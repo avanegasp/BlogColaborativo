@@ -3,7 +3,7 @@
     <%= link_to "Ir a los posts", posts_path, class:"btn-danger btn-lg  col-sm-offset-10", style:"padding:10px;"%>
       <div class="col-md-12">
         <div class="col-md-8 col-md-offset-2">
-          <h1 style="color:#337ab7;"><%=markdown(@post.title)%></h1>
+          <h1 style="color:#337ab7"><%=markdown(@post.title)%></h1>
           <% if @post.header_image.attached? %>
             <p><strong>Creado por:</strong> <%= @post.user.first_name%> <%= @post.user.last_name%> (<%=@post.user.email%>)</p>
             <p style="margin-bottom:20px"></p>

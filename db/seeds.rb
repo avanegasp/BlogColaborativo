@@ -10,4 +10,5 @@ Theme.destroy_all
 
 Theme.create!(theme_name:"Tecnología")
 Theme.create!(theme_name:"Series")
+Theme.create!(theme_name:"Platzi")
 Theme.create!(theme_name:"Programación")
